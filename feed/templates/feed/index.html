@@ -1,0 +1,27 @@
+{% extends "feed/base.html" %}
+
+{% block content %}
+
+
+<ul class="nav nav-tabs">
+  <li class="active"><a href="{% url 'index' %}">Home</a></li>
+  <li><a href="{% url 'feeds' %}">Feed</a></li>
+  <li><a href="#">Menu 2</a></li>
+  <li><a href="#">Menu 3</a></li>
+</ul>
+<h1>Feel</h1>
+<p>Welcome to home page</p>
+
+<ul class="sidebar-nav">
+  {% if user.is_authenticated %}
+      <li>User: {{ user.get_username }}</li>
+      <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+    {% else %}
+      <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+    {% endif %}
+  </ul>
+
+<h2>Total posts:{{num_post}}</h2>
+<h2>Total happy posts:{{num_happy}}</h2>
+<h2>Total sad posts:{{num_sad}}</h2>
+{% endblock %}

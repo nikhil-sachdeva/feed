@@ -1,0 +1,21 @@
+{% extends "feed/base.html" %}
+
+{% block content %}
+
+<ul class="nav nav-tabs">
+  <li><a href="{% url 'index' %}">Home</a></li>
+  <li class="active"><a href="{% url 'feeds' %}">Feed</a></li>
+  <li><a href="#">Menu 2</a></li>
+  <li><a href="#">Menu 3</a></li>
+</ul>
+
+
+<ul class="nav nav-tabs">
+  <li><a href="{% url 'index' %}">Home</a></li>
+  <li class="active"><a href="#">Feed</a></li>
+  <li><a href="#">Menu 2</a></li>
+  <li><a href="#">Menu 3</a></li>
+</ul>
+<h1>Feeds</h1>
+<p>Welcome to home page</p>
+{% endblock %}

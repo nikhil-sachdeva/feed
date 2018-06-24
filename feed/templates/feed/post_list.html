@@ -1,0 +1,19 @@
+{% extends "feed/base.html" %}
+
+{% block content %}
+    <h1>Post List</h1>
+
+    {% if post_list %}
+    <ul>
+
+      {% for post in post_list %}
+      <li>
+        <a href="{% url 'post-detail' post.pk %}">{{ post.topic }}</a> ({{post.feel}})
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no posts in the feed.</p>
+    {% endif %}
+{% endblock %}
